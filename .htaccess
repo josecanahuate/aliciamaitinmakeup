@@ -1,0 +1,7 @@
+/* RewriteEngine On
+RewriteCond %{HTTP_HOST} ^aliciamaitinmakeup\.com$ [NC]
+RewriteRule ^$ https://www.aliciamaitinmakeup.com/servicios-maquillaje-panama [L,R=301] */
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.aliciamaitinmakeup\.com [NC]
+RewriteRule ^$ /servicios-maquillaje-panama [L,R=301]
