@@ -194,6 +194,7 @@
             border-bottom-right-radius: 0;
           }
         }
+
         &:not(:first-child) {
           @include border-start-radius(0);
 

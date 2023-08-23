@@ -8,8 +8,6 @@
     <meta name="description" content="Alicia Maitín Makeup. Descubre la magia del maquillaje con Alicia Maitín Makeup. Especialista en maquillaje de novias, moda y arte. ¡Reserva tu cita y realza tu belleza!">
     <meta name="keywords" content="maquillaje, maquillista, belleza, Panamá, novias, moda">
     <meta name="author" content="Alicia Maitín">
-
-    <!--SUBIR IMAGEN A FB Y TOMAR LA URL DE AHI ----------------------------------------------------->
     <meta property="og:image" content="img/socialimage.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">

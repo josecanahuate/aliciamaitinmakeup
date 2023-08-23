@@ -10,8 +10,8 @@
         }, 1);
     };
     spinner();
-    
-    
+
+
     // Initiate the wowjs
     new WOW().init();
 
@@ -30,30 +30,30 @@
     $(".navbar-nav a").on('click', function (event) {
         if (this.hash !== "") {
             event.preventDefault();
-            
+
             $('html, body').animate({
                 scrollTop: $(this.hash).offset().top - 45
             }, 1000, 'easeInOutExpo');
-            
+
             if ($(this).parents('.navbar-nav').length) {
                 $('.navbar-nav .active').removeClass('active');
                 $(this).closest('a').addClass('active');
             }
         }
     });
-    
-    
+
+
     // BOTON WHATSAPP CONTRATA MIS SERVICIOS
     function redirigirWhatsApp() {
-    // Reemplaza 'NUMERO_DE_TELEFONO' con el número de teléfono o enlace personalizado de tu cuenta de WhatsApp
-    var numeroTelefono = '+50763270029';
-    var enlaceWhatsApp = 'https://wa.me/' + numeroTelefono + '?text=¡Hola! Me gustaría contratar tus servicios.';
-                            
-    // Abre WhatsApp en una nueva pestaña o ventana
-    window.open(enlaceWhatsApp);
-    }   
-      
-     // Back to top button
+        // Reemplaza 'NUMERO_DE_TELEFONO' con el número de teléfono o enlace personalizado de tu cuenta de WhatsApp
+        var numeroTelefono = '+50763270029';
+        var enlaceWhatsApp = 'https://wa.me/' + numeroTelefono + '?text=¡Hola! Me gustaría contratar tus servicios.';
+
+        // Abre WhatsApp en una nueva pestaña o ventana
+        window.open(enlaceWhatsApp);
+    }
+
+    // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
             $('.back-to-top').fadeIn('slow');
@@ -62,10 +62,10 @@
         }
     });
     $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
         return false;
     });
-      
+
     // Typed Initiate
     if ($('.typed-text-output').length == 1) {
         var typed_strings = $('.typed-text').text();
@@ -91,7 +91,7 @@
         $("#video").attr('src', $videoSrc);
     })
 
-    
+
     // Facts counter
     $('[data-toggle="counter-up"]').counterUp({
         delay: 10,
@@ -104,7 +104,7 @@
         $('.progress .progress-bar').each(function () {
             $(this).css("width", $(this).attr("aria-valuenow") + '%');
         });
-    }, {offset: '80%'});
+    }, { offset: '80%' });
 
 
     // Portfolio isotope and filter
@@ -116,19 +116,18 @@
         $("#portfolio-flters li").removeClass('active');
         $(this).addClass('active');
 
-        portfolioIsotope.isotope({filter: $(this).data('filter')});
+        portfolioIsotope.isotope({ filter: $(this).data('filter') });
     });
-
 
     // Testimonials carousel
     $(".testimonial-carousel").owlCarousel({
         autoplay: true,
-        smartSpeed: 3000,
+        smartSpeed: 1000,
         items: 3,
         dots: true,
         loop: true,
     });
 
-    
+
 })(jQuery);
 

@@ -496,7 +496,6 @@
 </div>
 <!-- Service End -->
 
-
 <!-- Projects Start -->
 <div class="container-xxl py-6 pt-5" id="project">
     <div class="container">
@@ -520,8 +519,7 @@
                     <img class="img-fluid" src="img/4.webp" alt="Maquillaje para Todas las Ocasiones"
                         title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
                     <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/4.webp"
-                            data-mdb-zoom-effect="true" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/4.webp"data-mdb-zoom-effect="true" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                     </div>
                 </div>
             </div>
@@ -875,7 +873,6 @@
                 </div>
             </div>
 
-
             <div class="col-lg-4 col-md-6 portfolio-item second">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/bo1.webp" alt="Maquillaje para Todas las Ocasiones"
@@ -886,6 +883,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-4 col-md-6 portfolio-item second">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/bo2.webp" alt="Maquillaje para Todas las Ocasiones"
@@ -896,6 +894,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-4 col-md-6 portfolio-item second">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/bo3.webp" alt="Maquillaje para Todas las Ocasiones"
@@ -917,6 +916,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-4 col-md-6 portfolio-item first">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/re14.webp" alt="Maquillaje para Todas las Ocasiones"
@@ -927,6 +927,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-4 col-md-6 portfolio-item first">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/re15.webp" alt="Maquillaje para Todas las Ocasiones"
@@ -937,11 +938,7 @@
                     </div>
                 </div>
             </div>
- <!--            <div class="portfolio-navigation">
-                <button class="prev"><i class="fas fa-chevron-left"></i></button>
-                <button class="next"><i class="fas fa-chevron-right"></i></button>
-            </div> -->
-
+            
         </div>
     </div>
 </div>
@@ -1142,6 +1139,47 @@
     </div>
 </section>
 
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Sanitize and validate input fields
+    $nombre = sanitizeInput($_POST["nombre"]);
+    $correo = sanitizeInput($_POST["correo"]);
+    $telefono = sanitizeInput($_POST["telefono"]);
+    $servicios = sanitizeInput($_POST["servicios"]);
+    $fecha = sanitizeInput($_POST["fecha"]);
+    $mensaje = sanitizeInput($_POST["mensaje"]);
+
+    // Validate email format
+    if (!filter_var($correo, FILTER_VALIDATE_EMAIL)) {
+        $error_message = "El correo electrónico no es válido.";
+    } else {
+        // Process the form and send email
+        $to = "aliciamaitin20@gmail.com";
+        $subject = "Nueva reserva de cita";
+        $message = "Nombre: $nombre\n";
+        $message .= "Correo: $correo\n";
+        $message .= "Teléfono: $telefono\n";
+        $message .= "Tipo de Servicio: $servicios\n";
+        $message .= "Fecha: $fecha\n";
+        $message .= "Mensaje: $mensaje\n";
+        $headers = "From: $correo";
+
+        if (mail($to, $subject, $message, $headers)) {
+            $success_message = "Tu reserva ha sido enviada correctamente.";
+        } else {
+            $error_message = "Hubo un problema al enviar tu reserva. Por favor, intenta de nuevo más tarde.";
+        }
+    }
+}
+
+// Sanitize input to prevent XSS attacks
+function sanitizeInput($input) {
+    $input = trim($input);
+    $input = stripslashes($input);
+    $input = htmlspecialchars($input);
+    return $input;
+}
+?>
 
 
 <!-- Contact Start -->
@@ -1177,7 +1215,8 @@
                 <p class="mb-4">Estoy aquí para realzar tu belleza. Permíteme crear un look personalizado que resalte
                     tus rasgos únicos. Contáctame y déjame cuidar de ti.</a></p>
                 <!-- <form action="https://formspree.io/f/mqkorylo" method="POST"> -->
-                <form action="<?php echo htmlspecialchars('formularioController.php'); ?>" method="POST">
+                
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
                     <!-- <form action="https://formsubmit.co/josecanahuate05@gmail.com" method="POST"> -->
                     <input type="hidden" name="_template" value="table">
                     <div class="row g-3">

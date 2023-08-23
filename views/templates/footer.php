@@ -12,7 +12,6 @@
 </div>
 <!-- Map End -->
 
-
 <!-- Copyright Start -->
 <div class="container-fluid bg-dark text-white py-4">
     <div class="container">
@@ -23,8 +22,6 @@
             <div class="col-md-6 text-center text-md-end">
                 Designed By <a class="border-bottom text-secondary" target="_blank"
                     href="https://www.instagram.com/tristardevelops/">Tristar Dev</a>
-                <!--                         <br>Distributed By: <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a>
- -->
             </div>
         </div>
     </div>
@@ -47,28 +44,22 @@
         left: 20px;
         display: none;
         z-index: 999;
-        /* Asegura que el botón esté por encima de otros elementos */
     }
 
     .back-to-top i.bi-whatsapp {
         font-size: 30px;
-        /* Ajusta el tamaño según tus preferencias */
     }
-
-    /* Agrega aquí el resto de tus estilos */
 </style>
 <script>
     // BOTON WHATSAPP CONTRATA MIS SERVICIOS
     function redirigirWhatsApp() {
         var numeroTelefono = '+50763270029';
         var enlaceWhatsApp = 'https://wa.me/' + numeroTelefono + '?text=¡Hola! Me gustaría contratar tus servicios.';
-
-        // Abre WhatsApp en una nueva pestaña o ventana
         window.open(enlaceWhatsApp);
     }
 </script>
 <!-- JavaScript Libraries -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="lib/wow/wow.min.js"></script>
 <script src="lib/easing/easing.min.js"></script>
@@ -79,12 +70,12 @@
 <script src="lib/isotope/isotope.pkgd.min.js"></script>
 <script src="lib/lightbox/js/lightbox.min.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 <!-- Template Javascript -->
 <script src="js/main.js"></script>
+
+<!-- Isotope -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+
 </body>
 
 </html>
