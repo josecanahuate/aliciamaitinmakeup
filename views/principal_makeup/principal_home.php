@@ -1154,7 +1154,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $error_message = "El correo electrónico no es válido.";
     } else {
         // Process the form and send email
-        $to = "aliciamaitin20@gmail.com";
+        $to = "josecanahuate05@gmail.com";
         $subject = "Nueva reserva de cita";
         $message = "Nombre: $nombre\n";
         $message .= "Correo: $correo\n";
