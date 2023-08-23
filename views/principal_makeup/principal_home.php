@@ -519,7 +519,8 @@
                     <img class="img-fluid" src="img/4.webp" alt="Maquillaje para Todas las Ocasiones"
                         title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
                     <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/4.webp"data-mdb-zoom-effect="true" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/4.webp"
+                            data-mdb-zoom-effect="true" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                     </div>
                 </div>
             </div>
@@ -938,7 +939,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
 </div>
@@ -1164,16 +1165,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $message .= "Mensaje: $mensaje\n";
         $headers = "From: $correo";
 
+        // Configurar la respuesta automática (_replyto)
+        $headers = "From: $correo\r\n";
+        $headers .= "Reply-To: $correo\r\n";
+
+        // Configurar el mensaje de agradecimiento
+        $mensaje_autorespuesta = "¡Hola $nombre!\n\n";
+        $mensaje_autorespuesta .= "Gracias por elegirnos para tu cita de belleza. Hemos recibido tu reserva y pronto nos pondremos en contacto contigo para confirmarla.\n";
+        $mensaje_autorespuesta .= "En Alicia Makeup, nuestro objetivo es resaltar tu belleza única y brindarte un servicio excepcional. ¡Esperamos verte pronto!\n\n";
+        $mensaje_autorespuesta .= "Atentamente,\n";
+        $mensaje_autorespuesta .= "Alicia Maitín\n";
+        $mensaje_autorespuesta .= "Alicia Makeup";
+
+        // Enviar el correo de reserva
+        mail($to, $subject, $message, $headers);
+
+        // Enviar la respuesta automática
+        mail($correo, "Gracias por tu Reserva", $mensaje_autorespuesta, "From: $to");
+
+/* 
         if (mail($to, $subject, $message, $headers)) {
             $success_message = "Tu reserva ha sido enviada correctamente.";
         } else {
             $error_message = "Hubo un problema al enviar tu reserva. Por favor, intenta de nuevo más tarde.";
-        }
+        } */
     }
 }
 
 // Sanitize input to prevent XSS attacks
-function sanitizeInput($input) {
+function sanitizeInput($input)
+{
     $input = trim($input);
     $input = stripslashes($input);
     $input = htmlspecialchars($input);
@@ -1215,7 +1236,7 @@ function sanitizeInput($input) {
                 <p class="mb-4">Estoy aquí para realzar tu belleza. Permíteme crear un look personalizado que resalte
                     tus rasgos únicos. Contáctame y déjame cuidar de ti.</a></p>
                 <!-- <form action="https://formspree.io/f/mqkorylo" method="POST"> -->
-                
+
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
                     <!-- <form action="https://formsubmit.co/josecanahuate05@gmail.com" method="POST"> -->
                     <input type="hidden" name="_template" value="table">
