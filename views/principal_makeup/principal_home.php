@@ -1155,7 +1155,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $error_message = "El correo electrónico no es válido.";
     } else {
         // Process the form and send email
-        $to = "https://formsubmit.co/josecanahuate05@gmail.com";
+        $to = "josecanahuate05@gmail.com";
         $subject = "Nueva reserva de cita";
         $message = "Nombre: $nombre\n";
         $message .= "Correo: $correo\n";
@@ -1165,30 +1165,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $message .= "Mensaje: $mensaje\n";
         $headers = "From: $correo";
 
-        // Configurar la respuesta automática (_replyto)
-        $headers = "From: $correo\r\n";
-        $headers .= "Reply-To: $correo\r\n";
-
-        // Configurar el mensaje de agradecimiento
-        $mensaje_autorespuesta = "¡Hola $nombre!\n\n";
-        $mensaje_autorespuesta .= "Gracias por elegirnos para tu cita de belleza. Hemos recibido tu reserva y pronto nos pondremos en contacto contigo para confirmarla.\n";
-        $mensaje_autorespuesta .= "En Alicia Makeup, nuestro objetivo es resaltar tu belleza única y brindarte un servicio excepcional. ¡Esperamos verte pronto!\n\n";
-        $mensaje_autorespuesta .= "Atentamente,\n";
-        $mensaje_autorespuesta .= "Alicia Maitín\n";
-        $mensaje_autorespuesta .= "Alicia Makeup";
-
         // Enviar el correo de reserva
-        mail($to, $subject, $message, $headers);
-
-        // Enviar la respuesta automática
-        mail($correo, "Gracias por tu Reserva", $mensaje_autorespuesta, "From: $to");
-
-/* 
         if (mail($to, $subject, $message, $headers)) {
+            // Configurar la respuesta automática (_replyto)
+            $headers_autorespuesta = "From: $to\r\n";
+            $headers_autorespuesta .= "Reply-To: $to\r\n";
+            $mensaje_autorespuesta = "¡Hola $nombre!\n\n";
+            $mensaje_autorespuesta .= "Gracias por elegirnos para tu cita de belleza. Hemos recibido tu reserva y pronto nos pondremos en contacto contigo para confirmarla.\n";
+            $mensaje_autorespuesta .= "En Alicia Makeup, nuestro objetivo es resaltar tu belleza única y brindarte un servicio excepcional. ¡Esperamos verte pronto!\n\n";
+            $mensaje_autorespuesta .= "Atentamente,\n";
+            $mensaje_autorespuesta .= "Alicia Maitín\n";
+            $mensaje_autorespuesta .= "Alicia Makeup";
+
+            // Enviar la respuesta automática al cliente
+            mail($correo, "Gracias por tu Reserva", $mensaje_autorespuesta, $headers_autorespuesta);
+
             $success_message = "Tu reserva ha sido enviada correctamente.";
         } else {
             $error_message = "Hubo un problema al enviar tu reserva. Por favor, intenta de nuevo más tarde.";
-        } */
+        }
     }
 }
 
