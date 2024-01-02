@@ -33,7 +33,7 @@
 <a href="#" class="btn btn-lg btn-success btn-lg-square back-to-top pulse" target="_blank" onclick="redirigirWhatsApp()"
     style="margin-right: 30px; background-color: #25D366; border-radius:26px; border-color: #25D366; position: fixed; left: 20px;"><i
         class="bi bi-whatsapp"></i></a>
-<style>
+<style> 
     .pulse {
         animation: pulse 2s infinite;
         background-color: #25D366;

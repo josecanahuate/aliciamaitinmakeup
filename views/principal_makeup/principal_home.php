@@ -1237,7 +1237,7 @@ function sanitizeInput($input)
                                 Puede enviar una respuesta instantánea a sus usuarios con una copia del envío. 
                                 Agregar una personalización mensaje al cuerpo del correo electrónico. -->
                                 <input type="email" class="form-control" name="correo" id="correo" placeholder="Correo"
-                                    required>
+                                    required>                                    
                                 <label for="correo">Email</label>
                             </div>
                         </div>
@@ -1279,7 +1279,7 @@ function sanitizeInput($input)
                                 <label for="message">Mensaje</label>
                             </div>
                         </div>
-
+                        <input type="hidden" name="_next" value="https://mailchi.mp/[xxxxxx]/reserva">
                         <div class="col-12">
                             <button class="btn btn-primary py-3 px-5" type="submit">Reservar cita</button>
                         </div>

@@ -43,11 +43,28 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
-</head>
-
-<header>
-
-</header>
+    <header id="header" class="header fixed-top d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+          <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+            <!-- Uncomment the line below if you also wish to use an image logo -->
+            <!-- <img src="img/aliciafirma.jpg" width="100" height="100" alt=""> -->
+            <h1>Makeup<span>.</span></h1>
+          </a>
+          <nav id="navbar" class="navbar">
+            <ul>
+              <li><a href="#">Inicio</a></li>
+              <li><a href="#about" class="">Sobre mí</a></li>
+              <li><a href="#service">Servicios</a></li>
+              <li><a href="#project">Portafolio</a></li>
+              <li><a href="#consejos">Consejos de Belleza</a></li>
+              <li><a href="#contact">Contacto</a></li>
+            </ul>
+          </nav><!-- .navbar -->
+          <a class="btn-book-a-table" href="">Reservar Cita</a>
+          <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+          <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+        </div>
+      </header><!-- End Header -->
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51">
     <!-- Spinner Start -->
@@ -59,7 +76,7 @@
     </div>
 
     <!-- Navbar Start -->
-<nav class="navbar navbar-expand-lg bg-white navbar-light fixed-top shadow py-lg-0 px-4 px-lg-5 wow fadeIn"
+<!-- <nav class="navbar navbar-expand-lg bg-white navbar-light fixed-top shadow py-lg-0 px-4 px-lg-5 wow fadeIn"
 data-wow-delay="0.1s">
 <a  href="#" class="navbar-brand d-block d-lg-none">
     <h1 class="text-primary fw-bold m-0">Makeup</h1>
@@ -71,7 +88,6 @@ data-wow-delay="0.1s">
     <div class="navbar-nav ms-auto py-0">
         <a href="#" class="nav-item nav-link active">Inicio</a>
         <a href="#about" class="nav-item nav-link">Sobre mí</a>
-        <!--  <a href="#skill" class="nav-item nav-link">Skills</a> -->
         <a href="#service" class="nav-item nav-link">Servicios</a>
     </div>
     <a href="#" class="navbar-brand bg-secondary py-3 px-4 mx-3 d-none d-lg-block">
@@ -79,16 +95,16 @@ data-wow-delay="0.1s">
     </a>
     <div class="navbar-nav me-auto py-0">
         <a href="#project" class="nav-item nav-link">Portafolio</a>
-        <!--   <a href="#team" class="nav-item nav-link">Team</a> -->
-        <!-- <a href="#testimonial" class="nav-item nav-link">Testimonios</a> -->
         <a href="#contact" class="nav-item nav-link">Reservar Cita</a>
         <a class="nav-item nav-link" href="https://www.instagram.com/aliciamaitinmakeup/" target="_blank"><i
                 class="fab fa-instagram"></i></a>
     </div>
 </div>
-</nav>
+</nav> -->
 <!-- Navbar End -->
-<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" style="margin-top: 0px;">
+
+
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" style="margin-top: 50px;">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
             aria-current="true" aria-label="Slide 1"></button>
@@ -132,22 +148,6 @@ data-wow-delay="0.1s">
         object-fit: cover;
     }
 </style>
-
-<div class="container">
-    <div class="row g-5 align-items-centerr">
-        <div class="col-lg-6 py-6 pb-0 pt-lg-0">
-            <div class="d-flex align-items-center pt-5">
-                <a href="#contact" class="btn reservar btn-primary py-3 px-4 me-5">Reservar una cita</a>
-                <button type="button" class="btn-play" data-bs-toggle="modal" data-src="img/aliciavideo.mp4"
-                    data-bs-target="#videoModal">
-                    <span></span>
-                </button>
-                <h5 class="ms-4 mb-0 d-none d-sm-block">Play Video</h5>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Header End -->
 
 <style>
     .container .btn {
@@ -229,63 +229,11 @@ data-wow-delay="0.1s">
     }
 </style>
 
-<!-- Video Modal Start -->
-<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered custom-modal">
-        <div class="modal-content rounded-0">
-            <div class="modal-header">
-                <h3 class="modal-title" id="exampleModalLabel">Makeup By Alicia Maitín</h3>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <!-- 16:9 aspect ratio -->
-                <div class="ratio ratio-9x16">
-                    <video class="embed-responsive-item" src="" id="video" controls autoplay></video>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- Video Modal End -->
-<style>
-    .ratio {
-        position: relative;
-        width: 100%;
-        height: 0;
-        padding-bottom: 120.77%;
-        /* Agranda el tamaño del card a lo largo */
-    }
-
-    .ratio-9x16 video {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        object-fit: cover;
-        /* Ajusta el video para que ocupe todo el espacio disponible sin distorsionar */
-        background-color: black;
-    }
-</style>
-
-<script>
-    // Detener y restablecer el video al cerrar el modal
-    var videoModal = document.getElementById('videoModal');
-    videoModal.addEventListener('hidden.bs.modal', function () {
-        var video = document.getElementById('video');
-        video.pause();
-        video.currentTime = 0;
-    });
-</script>
-
-
 <!-- About Start -->
 <div class="container-xxl py-6" id="about">
     <div class="container">
         <div class="row g-5">
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" data-wow-duration="2s">
                 <div class="d-flex align-items-center mb-5">
                     <div class="years flex-shrink-0 text-center me-4">
                         <script>
@@ -356,13 +304,6 @@ data-wow-delay="0.1s">
                     <img class="img-fluid rounded" src="img/aliciafirma.jpg" alt="Maquillaje para Todas las Ocasiones"
                         title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
                 </div>
-                <!--                     
-    <div class="d-flex align-items-center mb-3">
-                        <h5 class="border-end pe-3 me-3 mb-0">Projects Completed</h5>
-                        <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">1234</h2>
-                    </div>
-                    <p class="mb-0">Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam amet diam ipsum clita labore dolor duo clita.</p>
- -->
             </div>
         </div>
     </div>
@@ -370,7 +311,7 @@ data-wow-delay="0.1s">
 <!-- About End -->
 
 <!-- PROMOTIONS AND OFFERS START -->
-<div class="container px-4 py-5" id="custom-cards">
+<div class="container px-4 py-5 wow fadeInUp" data-wow-delay="0.1s" data-wow-duration="2s" id="custom-cards">
     <h2 class="pb-2 border-bottom">Ofertas y Promociones</h2>
 
     <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
@@ -604,22 +545,13 @@ data-wow-delay="0.1s">
                 </ul>
             </div>
         </div>
+
         <div class="row g-4 portfolio-container wow fadeInUp" data-wow-delay="0.1s">
-            <div class="col-lg-4 col-md-6 portfolio-item first">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/4.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
-                    <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/4.webp"
-                            data-mdb-zoom-effect="true" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                    </div>
-                </div>
-            </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item first">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/5.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
+                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!" width="500" height="500">
                     <div class="portfolio-btn">
                         <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/5.webp"
                             data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
@@ -630,7 +562,7 @@ data-wow-delay="0.1s">
             <div class="col-lg-4 col-md-6 portfolio-item first">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/6.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
+                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!" width="500" height="500">
                     <div class="portfolio-btn">
                         <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/6.webp"
                             data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
@@ -641,27 +573,18 @@ data-wow-delay="0.1s">
             <div class="col-lg-4 col-md-6 portfolio-item second">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/b6.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
+                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!" width="500" height="500">
                     <div class="portfolio-btn">
                         <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/b6.webp"
                             data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item second">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/b7.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
-                    <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/b7.webp"
-                            data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                    </div>
-                </div>
-            </div>
+
             <div class="col-lg-4 col-md-6 portfolio-item second">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/b8.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
+                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!" width="500" height="500">
                     <div class="portfolio-btn">
                         <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/b8.webp"
                             data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
@@ -672,7 +595,7 @@ data-wow-delay="0.1s">
             <div class="col-lg-4 col-md-6 portfolio-item second">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/g12.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
+                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!" width="500" height="500">
                     <div class="portfolio-btn">
                         <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/g12.webp"
                             data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
@@ -683,7 +606,7 @@ data-wow-delay="0.1s">
             <div class="col-lg-4 col-md-6 portfolio-item second">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/g13.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
+                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!" width="500" height="500">
                     <div class="portfolio-btn">
                         <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/g13.webp"
                             data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
@@ -693,19 +616,8 @@ data-wow-delay="0.1s">
 
             <div class="col-lg-4 col-md-6 portfolio-item second">
                 <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/g14.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
-                    <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/g14.webp"
-                            data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item second">
-                <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/c5.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
+                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!" width="500" height="500">
                     <div class="portfolio-btn">
                         <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/c5.webp"
                             data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
@@ -716,7 +628,7 @@ data-wow-delay="0.1s">
             <div class="col-lg-4 col-md-6 portfolio-item second">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/c3.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
+                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!" width="500" height="500">
                     <div class="portfolio-btn">
                         <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/c3.webp"
                             data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
@@ -727,7 +639,7 @@ data-wow-delay="0.1s">
             <div class="col-lg-4 col-md-6 portfolio-item second">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/c2.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
+                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!" width="500" height="500">
                     <div class="portfolio-btn">
                         <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/c2.webp"
                             data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
@@ -738,7 +650,7 @@ data-wow-delay="0.1s">
             <div class="col-lg-4 col-md-6 portfolio-item first">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/15.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
+                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!" width="500" height="500">
                     <div class="portfolio-btn">
                         <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/15.webp"
                             data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
@@ -746,54 +658,24 @@ data-wow-delay="0.1s">
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item first">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/17.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
-                    <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/17.webp"
-                            data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item first">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/z1.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
-                    <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/z1.webp"
-                            data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                    </div>
-                </div>
-            </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item first">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/16.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
+                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!" width="500" height="500">
                     <div class="portfolio-btn">
                         <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/16.webp"
                             data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-4 col-md-6 portfolio-item first">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/21.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
+                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!" width="500" height="500">
                     <div class="portfolio-btn">
                         <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/21.webp"
-                            data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item first">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/bc1.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
-                    <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/bc1.webp"
                             data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                     </div>
                 </div>
@@ -802,7 +684,7 @@ data-wow-delay="0.1s">
             <div class="col-lg-4 col-md-6 portfolio-item second">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/z2.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
+                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!" width="500" height="500">
                     <div class="portfolio-btn">
                         <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/z2.webp"
                             data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
@@ -813,7 +695,7 @@ data-wow-delay="0.1s">
             <div class="col-lg-4 col-md-6 portfolio-item second">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/d11.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
+                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!" width="500" height="500">
                     <div class="portfolio-btn">
                         <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/d11.webp"
                             data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
@@ -824,7 +706,7 @@ data-wow-delay="0.1s">
             <div class="col-lg-4 col-md-6 portfolio-item second">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/d10.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
+                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!" width="500" height="500">
                     <div class="portfolio-btn">
                         <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/d10.webp"
                             data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
@@ -836,7 +718,7 @@ data-wow-delay="0.1s">
             <div class="col-lg-4 col-md-6 portfolio-item four">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/a17.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
+                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!" width="500" height="500">
                     <div class="portfolio-btn">
                         <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/a17.webp"
                             data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
@@ -847,7 +729,7 @@ data-wow-delay="0.1s">
             <div class="col-lg-4 col-md-6 portfolio-item four">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/a18.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
+                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!" width="500" height="500">
                     <div class="portfolio-btn">
                         <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/a18.webp"
                             data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
@@ -858,7 +740,7 @@ data-wow-delay="0.1s">
             <div class="col-lg-4 col-md-6 portfolio-item four">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/a20.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
+                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!" width="500" height="500">
                     <div class="portfolio-btn">
                         <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/a20.webp"
                             data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
@@ -870,31 +752,9 @@ data-wow-delay="0.1s">
             <div class="col-lg-4 col-md-6 portfolio-item first">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/r3.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
+                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!" width="500" height="500">
                     <div class="portfolio-btn">
                         <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/r3.webp"
-                            data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item first">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/r8.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
-                    <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/r8.webp"
-                            data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item first">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/r9.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
-                    <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/r9.webp"
                             data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                     </div>
                 </div>
@@ -904,7 +764,7 @@ data-wow-delay="0.1s">
             <div class="col-lg-4 col-md-6 portfolio-item third">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/q11.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
+                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!" width="500" height="500">
                     <div class="portfolio-btn">
                         <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/q11.webp"
                             data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
@@ -914,19 +774,8 @@ data-wow-delay="0.1s">
 
             <div class="col-lg-4 col-md-6 portfolio-item third">
                 <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/q12.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
-                    <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/q12.webp"
-                            data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item third">
-                <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/qi12.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
+                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!" width="500" height="500">
                     <div class="portfolio-btn">
                         <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/qi12.webp"
                             data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
@@ -937,61 +786,31 @@ data-wow-delay="0.1s">
             <div class="col-lg-4 col-md-6 portfolio-item second">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/bu19.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
+                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!" width="500" height="500">
                     <div class="portfolio-btn">
                         <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/bu19.webp"
                             data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-4 col-md-6 portfolio-item second">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/bu20.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
+                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!" width="500" height="500">
                     <div class="portfolio-btn">
                         <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/bu20.webp"
                             data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-4 col-md-6 portfolio-item second">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/bu21.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
+                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!" width="500" height="500">
                     <div class="portfolio-btn">
                         <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/bu21.webp"
-                            data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-lg-4 col-md-6 portfolio-item second">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/bo1.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
-                    <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/bo1.webp"
-                            data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item second">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/bo2.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
-                    <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/bo2.webp"
-                            data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item second">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/bo3.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
-                    <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/bo3.webp"
                             data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                     </div>
                 </div>
@@ -1000,49 +819,47 @@ data-wow-delay="0.1s">
             <div class="col-lg-4 col-md-6 portfolio-item first">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/re13.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
+                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!" width="500" height="500">
                     <div class="portfolio-btn">
                         <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/re13.webp"
                             data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-4 col-md-6 portfolio-item first">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/re14.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
+                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!" width="500" height="500">
                     <div class="portfolio-btn">
                         <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/re14.webp"
                             data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-4 col-md-6 portfolio-item first">
                 <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="img/re15.webp" alt="Maquillaje para Todas las Ocasiones"
-                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!">
+                        title="¡Resalta tu belleza en cada momento con nuestro maquillaje profesional!" width="500" height="500">
                     <div class="portfolio-btn">
                         <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/re15.webp"
                             data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                     </div>
                 </div>
             </div>
- <!--            <div class="portfolio-navigation">
-                <button class="prev"><i class="fas fa-chevron-left"></i></button>
-                <button class="next"><i class="fas fa-chevron-right"></i></button>
-            </div> -->
 
-        </div>
+        </div> <!-- RowEnd -->
     </div>
 </div>
 <!-- Projects End -->
 
 
 <!-- RECOMENDACIONES START -->
-<div class="container px-4 py-5" id="custom-cards">
+<div class="container px-4 py-5 wow fadeInUp" data-wow-delay="0.1s" data-wow-duration="2s" id="consejos">
     <h2 class="pb-2 border-bottom">Consejos de Belleza, Maquillaje y Cuidado del Cabello</h2>
     <div class="row featurette" style="margin-top: 20px">
-        <div class="col-md-7">
+        <div class="col-md-7 col-md-6">
             <article style="text-align: justify;">
                 <p>En un mundo que celebra la individualidad y la autoexpresión, resaltar tu belleza única es un arte
                     que
@@ -1078,7 +895,7 @@ data-wow-delay="0.1s">
                     sientes bien por dentro, eso se refleja en tu belleza exterior.</p>
             </article>
         </div>
-        <div class="col-md-5">
+        <div class="col-lg-5 col-md-5">
             <div id="image-slider" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
                 role="img" aria-label="" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <img src="img/1.webp" alt="Image 1" class="slider-image imagen-consejo">
@@ -1114,7 +931,7 @@ data-wow-delay="0.1s">
 </style>
 <!--PREGUNTAS FRECUENTES -->
 <section class="faq-section">
-    <div class="container">
+    <div class="container wow fadeInUp" data-wow-delay="0.2s">
         <div class="row">
             <div class="col-lg-8 offset-lg-2">
                 <h2 class="text-center mb-4">Preguntas Frecuentes</h2>
@@ -1266,7 +1083,8 @@ data-wow-delay="0.1s">
                 <p class="mb-4">Estoy aquí para realzar tu belleza. Permíteme crear un look personalizado que resalte
                     tus rasgos únicos. Contáctame y déjame cuidar de ti.</a></p>
                 <!-- <form action="https://formspree.io/f/mqkorylo" method="POST"> -->
-                     <form action="https://formsubmit.co/josecanahuate05@gmail.com" method="POST">
+                    <!--  <form action="https://formsubmit.co/josecanahuate05@gmail.com" method="POST"> -->
+                    <form action="" method="POST">
                     <input type="hidden" name="_template" value="table">
                     <div class="row g-3">
                         <div class="col-md-6">
@@ -1278,9 +1096,6 @@ data-wow-delay="0.1s">
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <!--  _autoresponse
-                                Puede enviar una respuesta instantánea a sus usuarios con una copia del envío. 
-                                Agregar una personalización mensaje al cuerpo del correo electrónico. -->
                                 <input type="email" class="form-control" name="correo" id="correo" placeholder="Correo"
                                     required>
                                 <label for="correo">Email</label>
@@ -1335,6 +1150,7 @@ data-wow-delay="0.1s">
     </div>
 </div>
 <!-- Contact End -->
+
 <!--FOOTER-->
 <!-- Map Start -->
 <div class="container-xxl pt-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
@@ -1350,19 +1166,27 @@ data-wow-delay="0.1s">
 <!-- Map End -->
 
 <!-- Copyright Start -->
-<div class="container-fluid bg-dark text-white py-4">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                &copy; <a class="border-bottom text-secondary" href="#">Maitín Makeup</a>, All Right Reserved.
-            </div>
-            <div class="col-md-6 text-center text-md-end">
-                Designed By <a class="border-bottom text-secondary" target="_blank"
-                    href="https://www.instagram.com/tristardevelops/">Tristar Dev</a>
-            </div>
-        </div>
-    </div>
-</div>
+<div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <div class="col-md-4 d-flex align-items-center">
+        <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="24" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+              </svg>
+        </a>
+        <span class="mb-3 mb-md-0 text-body-secondary">© 2023 Maitín Makeup</span>
+      </div>
+
+      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <li class="ms-3"><a class="text-body-secondary" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+          </svg></a></li>
+        <li class="ms-3"><a class="text-body-secondary" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+          </svg></a></li>
+      </ul>
+    </footer>
+  </div>
 <!-- Copyright End -->
 
 <!-- Back to Top -->
